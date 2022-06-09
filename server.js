@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes");
+const dotenv = require("dotenv");
 
 const PORT = process.env.PORT || 3000;
 
@@ -8,13 +9,13 @@ var cors = require("cors");
 
 const app = express();
 
+dotenv.config();
+
 app.use(cors({ origin : true, credentials : true }));
 app.use(express.json());
 
-const URL = "mongodb+srv://testuser:test1234@default.borpg.mongodb.net/?retryWrites=true&w=majority";
-
 mongoose
-    .connect(URL, {
+    .connect(process.env.URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

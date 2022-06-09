@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^5.13.14"
+    "mongoose": "^5.13.14",
+    "dotenv": "^9.0.2"
   },
   "name": "api",
   "version": "1.0.0",
